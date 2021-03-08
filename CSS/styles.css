@@ -1,3 +1,34 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 :root {
   --main-font: 'Roboto', sans-serif;
   --main-color: #212121;
@@ -14,6 +45,11 @@ body {
   font-family: var(--main-font);
   color: var(--main-color);
   background-color: var(-white);
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .link {
@@ -48,12 +84,49 @@ body {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  margin: 0 auto;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 94px 0px;
+}
+.section + .what-we-do {
+  padding-top: 0;
 }
 /* ================END COMPONENTS============= */
 
 /* ================HEADER============= */
+.header {
+  background-color: var(--white);
+  border-bottom: #ececec solid;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
 
-.navigation-item {
+.header .logo {
+  margin-right: 93px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-list {
+  display: flex;
+}
+
+.navigation-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -61,15 +134,28 @@ body {
   color: var(--main-color);
 }
 
-.navigation-item:hover {
+.navigation-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.navigation-link:hover {
   color: var(--accent-color);
 }
-.navigation-item:focus {
+.navigation-link:focus {
   color: var(--accent-color);
 }
 
-.active-navigation-item {
+.active-navigation-link {
   color: var(--accent-color);
+}
+
+.contact-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contact:not(:last-child) {
+  margin-right: 50px;
 }
 
 .header-contacts {
@@ -79,19 +165,24 @@ body {
   letter-spacing: 0.02em;
   color: var(--secondary-color);
 }
+
 .header-contacts:hover {
   color: var(--accent-color);
 }
+
 .header-contacts:focus {
   color: var(--accent-color);
 }
 
-.header {
-  background-color: var(--white);
-}
 /* ================END HEADER============= */
 
 /* ================HERO============= */
+.hero {
+  background-color: var(--background-dark-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
 .main-title {
   font-weight: 900;
   font-size: 44px;
@@ -99,8 +190,12 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white);
+  width: 696px;
+  text-align: center;
+  margin: 0 auto;
 }
 .modal-btn {
+  display: block;
   background-color: var(--accent-color);
   font-weight: 700;
   font-size: 16px;
@@ -111,6 +206,11 @@ body {
   color: var(--white);
   font-family: inherit;
   border: 0;
+  border-radius: 4px;
+  margin-top: 30px;
+  min-width: 200px;
+  padding: 10px 32px;
+  margin: 30px auto 0;
 }
 
 .modal-btn:hover {
@@ -121,18 +221,27 @@ body {
   background-color: var(--accent-button);
 }
 
-.hero {
-  background-color: var(--background-dark-color);
-}
 /* ================END HERO============= */
 
 /* ================ABOUT============= */
+.about-list {
+  display: flex;
+}
+
+.about-element {
+  width: 270px;
+}
+.about-element:not(:last-child) {
+  margin-right: 30px;
+}
+
 .about-list-item {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .about-list-text {
   font-weight: 400;
@@ -141,6 +250,7 @@ body {
   letter-spacing: 0.03em;
   color: var(--secondary-color);
 }
+
 /* ================END ABOUT============= */
 
 /* ================TEAM============= */
