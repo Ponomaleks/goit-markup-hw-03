@@ -61,7 +61,6 @@ body {
 }
 
 /* ================COMPONENTS============= */
-
 .logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -85,6 +84,8 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .container {
@@ -96,9 +97,7 @@ body {
 .section {
   padding: 94px 0px;
 }
-.section + .what-we-do {
-  padding-top: 0;
-}
+
 /* ================END COMPONENTS============= */
 
 /* ================HEADER============= */
@@ -207,7 +206,6 @@ body {
   font-family: inherit;
   border: 0;
   border-radius: 4px;
-  margin-top: 30px;
   min-width: 200px;
   padding: 10px 32px;
   margin: 30px auto 0;
@@ -253,12 +251,45 @@ body {
 
 /* ================END ABOUT============= */
 
+/* ================WHAT WE DO============= */
+.section + .what-we-do {
+  padding-top: 0;
+}
+
+.we-do-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ================WHAT WE DO============= */
+
 /* ================TEAM============= */
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.team-member-card {
+  flex-basis: calc (100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+  background-color: var(--white);
+  border-radius: 0px 0px 4px 4px;
+  padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .team-members {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  text-align: center;
+
+  margin-top: 30px;
 }
 
 .member-porofession {
@@ -267,6 +298,9 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--secondary-color);
+  text-align: center;
+
+  margin-top: 10px;
 }
 .team {
   background-color: var(--background-light-color);
@@ -274,6 +308,10 @@ body {
 /* ================END TEAM============= */
 
 /* ================FOOTER============= */
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 .address {
   font-style: normal;
@@ -282,6 +320,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--white);
+  margin-top: 20px;
 }
 .address:hover {
   color: var(--accent-color);
@@ -312,6 +351,12 @@ body {
 /* *************** portfolio.html **************** */
 
 /* ================PORTFOLIO============= */
+.portfolio-btn-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .portfolio-btn {
   font-weight: 500;
   font-size: 16px;
@@ -321,6 +366,11 @@ body {
   color: var(--main-color);
   border: 0;
   background-color: var(--background-light-color);
+  border-radius: 4px;
+}
+
+.portfolio-btn-list-item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .portfolio-btn:hover {
@@ -334,11 +384,30 @@ body {
   background-color: var(--accent-color);
 }
 
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.portfolio-list-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc (100% / 3 - 30px);
+}
+
+.portfolio-subtitle-wrapper {
+  border: 1px solid #eeeeee;
+  padding: 20px 24px;
+}
+
 .portfolio-item {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.03em;
+  margin-bottom: 4px;
 }
 
 .portfolio-subtitle {
